@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Icono de la pagina -->
+    <link rel="shortcut icon" href="assets/svg/music.svg" type="image/x-icon" />
+    <!-- Font awesome iconos -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -12,12 +15,41 @@
       referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Tipografía Raleway -->
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap"
       rel="stylesheet" />
+    <!-- Reset CSS -->
     <link rel="stylesheet" href="style/reset.css" />
+    <!-- Hojas de estilo en cascada -->
     <link rel="stylesheet" href="style/style.css" />
     <title>Music Player</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Lista -->
+    <aside class="music-list">
+      <h1 class="music-list__title">Music List</h1>
+      <ul class="music-list__ul"></ul>
+    </aside>
+    <!-- Container -->
+    <main class="container-reproductor">
+      <div class="continer-reproductor__music">
+        <figure class="container-reproductor__music__figure">
+          <img
+            src="assets/images/Beethoven-transformed.jpeg"
+            alt="Imagen de portada de la canción"
+            class="container-reproductor__music__figure__img" />
+          <figcaption class="container-reproductor__music__figure__title">
+            Beethoven
+          </figcaption>
+        </figure>
+        <div class="container-reproductor__music__progress"></div>
+        <section class="container-reproductor_controls">
+          <i class="fa-solid fa-backward"></i>
+          <i class="fa-solid fa-play"></i>
+          <i class="fa-solid fa-forward"></i>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>
