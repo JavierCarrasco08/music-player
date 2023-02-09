@@ -168,9 +168,9 @@ body {
   font-weight: 200;
 }
 .container-reproductor__progress {
-  display: flex;
+  align-self: flex-start;
   height: 0.3rem;
-  width: 90%;
+  width: 10%;
   background-color: #fafaff;
   position: relative;
 }
