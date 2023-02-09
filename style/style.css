@@ -1,7 +1,55 @@
 html {
   font-family: "Raleway", sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
   background-color: #30343f;
   color: #fafaff;
+  display: flex;
+}
+
+.music-list {
+  background-color: #1e2749;
+  flex-grow: 1;
+  width: 30%;
+  min-width: 14.2rem;
+  font-size: 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.music-list__title {
+  font-weight: 700;
+  flex-grow: 1;
+}
+.music-list__ul {
+  flex-grow: 2;
+}
+.music-list__nav {
+  flex-grow: 1;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.music-list__a {
+  width: 3.5rem;
+  transition: transform 0.5s ease;
+  -webkit-transition: transform 0.5s ease;
+  -moz-transition: transform 0.5s ease;
+  -ms-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+}
+.music-list__a:hover {
+  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  -o-transform: translateY(-5px);
 }
 
 /*# sourceMappingURL=style.css.map */
