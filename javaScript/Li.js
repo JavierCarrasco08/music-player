@@ -2,7 +2,7 @@ import { dataMusic } from "./data.js";
 
 export function liMusicList() {
   const li = [];
-  dataMusic.forEach((e) => {
+  dataMusic.forEach((e, index) => {
     const $li = document.createElement("li");
     $li.innerHTML = `<figure class="music-list__figure">
         <img src="${e.src}" alt="${e.name}" class="music-list__img" />
