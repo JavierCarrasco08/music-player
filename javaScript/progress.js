@@ -7,6 +7,8 @@ export function progressive() {
 }
 
 export function run() {
-  console.dir(($AUDIO.duration * 10) / (60 * 10));
-  $CONTENT_P.lastElementChild.textContent = `${$AUDIO.duration / 60}`;
+  setTimeout(() => {
+    console.dir($AUDIO);
+    console.log(parseFloat($AUDIO.duration / 60.6));
+  }, 1000);
 }
