@@ -1,16 +1,16 @@
+import { $musicListUl, $FIGURE, $controls, $AUDIO } from "./constantes.js";
 import { dataMusic } from "./data.js";
 import { liMusicList } from "./Li.js";
+import { progressive, run } from "./progress.js";
 let boolean = false;
-const $AUDIO = document.getElementById("audio");
-const $musicListUl = document.querySelector(".music-list__ul"),
-  $FIGURE = document.querySelector(".container-reproductor__figure"),
-  $controls = document.querySelector(".container-reproductor__controls");
 $musicListUl.append(...liMusicList());
+progressive();
 
-$musicListUl.addEventListener("click", (e) => {
+$musicListUl.addEventListener("pointerdown", (e) => {
   const LI = e.target.closest(".music-list__li");
   if (LI) {
     boolean = true;
+    // run();
     const $playPause = document.querySelector(
       ".container-reproductor__i-modificare"
     );
@@ -22,7 +22,8 @@ $musicListUl.addEventListener("click", (e) => {
     $AUDIO.play();
   }
 });
-$controls.addEventListener("click", (e) => {
+
+$controls.addEventListener("pointerdown", (e) => {
   if (boolean) {
     if (e.target.matches(".container-reproductor__i-modificare")) {
       if (e.target.classList.contains("fa-pause")) {
@@ -32,6 +33,7 @@ $controls.addEventListener("click", (e) => {
         e.target.classList.replace("fa-play", "fa-pause");
         $AUDIO.play();
       }
+      return false;
     }
     if (e.target.matches(".container-reproductor__i--next")) {
       let next = dataMusic.findIndex((e) => e.name === $AUDIO.dataset.name);
@@ -57,5 +59,6 @@ $controls.addEventListener("click", (e) => {
       $AUDIO.src = dataMusic.at(next).audio;
       $AUDIO.play();
     }
+    // run();
   }
 });

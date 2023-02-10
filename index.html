@@ -28,7 +28,7 @@
   </head>
   <body>
     <!-- Audio -->
-    <audio id="audio"></audio>
+    <audio id="audio" preload="metadata"></audio>
     <!-- Lista -->
     <aside class="music-list">
       <h1 class="music-list__title">Music List</h1>
@@ -63,9 +63,11 @@
         <div class="container-reproductor__temporizador">
           <div class="container-reproductor__num">
             <p class="container-reproductor__p">0:00</p>
-            <p class="container-reproductor__p">4:00</p>
+            <p class="container-reproductor__p">0:00</p>
           </div>
-          <div class="container-reproductor__progress"></div>
+          <div class="container-reproductor__progress">
+            <div class="container-reproductor__circle"></div>
+          </div>
         </div>
         <section class="container-reproductor__controls">
           <i
