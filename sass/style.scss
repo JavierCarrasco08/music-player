@@ -1,5 +1,5 @@
 @use "sass:color";
-@use "palettecolors" as *;
+@use "paletteColors" as *;
 html {
   font-family: "Raleway", sans-serif;
   margin: 0;
@@ -21,7 +21,7 @@ body {
 }
 // Music list
 .music-list {
-  background-color: $color-primary-blue-pruple;
+  background-color: $color-primary-blue-purple;
   flex-grow: 1;
   width: 30vw;
   // height: 100%;
