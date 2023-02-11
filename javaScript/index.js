@@ -11,7 +11,6 @@ import { progressive, run } from "./progress.js";
 let boolean = false;
 $musicListUl.append(...liMusicList());
 progressive();
-
 $musicListUl.addEventListener("pointerdown", (e) => {
   const LI = e.target.closest(".music-list__li");
   if (LI) {

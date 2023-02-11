@@ -7,8 +7,8 @@ export function progressive() {
 }
 
 export function run() {
-  setTimeout(() => {
-    console.dir($AUDIO);
-    console.log(parseFloat($AUDIO.duration / 60.6));
+  setInterval(() => {
+    // console.dir(Math.round($AUDIO.currentTime));
+    console.log(parseFloat($AUDIO.duration / 62));
   }, 1000);
 }
