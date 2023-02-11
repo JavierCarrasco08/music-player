@@ -35,6 +35,11 @@ body {
   -ms-transition: transform 0.5s ease-in-out;
   -o-transition: transform 0.5s ease-in-out;
 }
+.music-list__img-exit {
+  width: 2.5rem;
+  display: none;
+  cursor: pointer;
+}
 .music-list__title {
   font-weight: 700;
   flex-grow: 0;
@@ -109,6 +114,14 @@ body {
   background-color: #273469;
   width: 100%;
   position: relative;
+}
+.container-reproductor__play-list {
+  width: 2.5rem;
+  display: none;
+  position: absolute;
+  right: 1.5rem;
+  top: 2rem;
+  cursor: pointer;
 }
 .container-reproductor__effect {
   position: absolute;
@@ -203,15 +216,22 @@ body {
   }
   .music-list {
     position: fixed;
+    z-index: 2;
     width: 100%;
     height: 100%;
   }
   .music-list__name {
     font-size: 1rem;
   }
+  .music-list__img-exit {
+    display: block;
+  }
   .container-reproductor {
     width: 100vw;
     height: 100vh;
+  }
+  .container-reproductor__play-list {
+    display: block;
   }
 }
 @media screen and (max-width: 320px) {

@@ -4,17 +4,31 @@ import {
   $controls,
   $AUDIO,
   $PLAY,
+  $exitImg,
+  $PlAYLIST,
 } from "./constantes.js";
 import { dataMusic } from "./data.js";
 import { liMusicList } from "./Li.js";
 import { next, prev } from "./next_prev.js";
 import { progressive, run } from "./progress.js";
 let boolean = false;
+window.addEventListener("resize", (e) => {
+  if (document.documentElement.clientWidth > 560) {
+    $musicListUl.parentElement.classList.remove("translate");
+  }
+});
+$PlAYLIST.addEventListener("pointerdown", (e) => {
+  $musicListUl.parentElement.classList.remove("translate");
+});
+$exitImg.addEventListener("pointerdown", (e) => {
+  e.target.parentElement.classList.add("translate");
+});
 $musicListUl.append(...liMusicList());
 progressive();
 $musicListUl.addEventListener("pointerdown", (e) => {
   const LI = e.target.closest(".music-list__li");
   if (LI) {
+    $musicListUl.parentElement.classList.add("translate");
     boolean = true;
     const $playPause = document.querySelector(
       ".container-reproductor__i-modificare"

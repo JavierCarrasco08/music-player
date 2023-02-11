@@ -17,7 +17,6 @@ export function run() {
       ),
       secondsStatic = Math.floor((miliSecondStatic % (1000 * 60)) / 1000);
     $TEMPO.lastElementChild.textContent = `${minuteStatic}:${secondsStatic}`;
-    $AUDIO.currentTime = 139;
   }, 500);
 
   let setRun = setInterval(() => {
