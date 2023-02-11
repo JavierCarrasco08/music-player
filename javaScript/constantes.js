@@ -4,4 +4,5 @@ export const $AUDIO = document.getElementById("audio"),
   $FIGURE = document.querySelector(".container-reproductor__figure"),
   $controls = document.querySelector(".container-reproductor__controls"),
   $CIRCLE = document.querySelector(".container-reproductor__circle"),
-  $PLAY = document.querySelector(".container-reproductor__i-modificare");
+  $PLAY = document.querySelector(".container-reproductor__i-modificare"),
+  $TEMPO = document.querySelector(".container-reproductor__num");

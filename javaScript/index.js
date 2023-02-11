@@ -53,6 +53,7 @@ $controls.addEventListener("pointerdown", (e) => {
       $FIGURE.lastElementChild.textContent = dataMusic.at(next).name;
       $AUDIO.dataset.name = dataMusic.at(next).name;
       $AUDIO.src = dataMusic.at(next).audio;
+      run();
       $AUDIO.play();
     }
     if (e.target.matches(".container-reproductor__i--prev")) {
@@ -68,6 +69,7 @@ $controls.addEventListener("pointerdown", (e) => {
       $FIGURE.lastElementChild.textContent = dataMusic.at(next).name;
       $AUDIO.dataset.name = dataMusic.at(next).name;
       $AUDIO.src = dataMusic.at(next).audio;
+      run();
       $AUDIO.play();
     }
   }

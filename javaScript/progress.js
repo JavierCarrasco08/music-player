@@ -1,4 +1,4 @@
-import { $AUDIO, $CIRCLE, $CONTENT_P } from "./constantes.js";
+import { $AUDIO, $CIRCLE, $CONTENT_P, $TEMPO } from "./constantes.js";
 
 export function progressive() {
   const $PARENT = $CIRCLE.parentElement;
@@ -7,8 +7,11 @@ export function progressive() {
 }
 
 export function run() {
-  setInterval(() => {
-    // console.dir(Math.round($AUDIO.currentTime));
-    console.log(parseFloat($AUDIO.duration / 62));
-  }, 1000);
+  $TEMPO.lastElementChild.textContent = `00:00`;
+  setTimeout(() => {
+    let miliSegundo = $AUDIO.duration * 1000,
+      minute = Math.floor((miliSegundo % (1000 * 60 * 60)) / (1000 * 60)),
+      segundos = Math.floor((miliSegundo % (1000 * 60)) / 1000);
+    $TEMPO.lastElementChild.textContent = `${minute}:${segundos}`;
+  }, 500);
 }
