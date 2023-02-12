@@ -23,12 +23,14 @@ $PlAYLIST.addEventListener("pointerdown", (e) => {
 $exitImg.addEventListener("pointerdown", (e) => {
   e.target.parentElement.classList.add("translate");
 });
-$musicListUl.append(...liMusicList());
 progressive();
+$musicListUl.append(...liMusicList());
 $musicListUl.addEventListener("pointerdown", (e) => {
   const LI = e.target.closest(".music-list__li");
   if (LI) {
-    $musicListUl.parentElement.classList.add("translate");
+    if (document.documentElement.clientWidth < 560) {
+      $musicListUl.parentElement.classList.add("translate");
+    }
     boolean = true;
     const $playPause = document.querySelector(
       ".container-reproductor__i-modificare"

@@ -1,8 +1,9 @@
 import { $AUDIO, $CIRCLE, $CONTENT_P, $PLAY, $TEMPO } from "./constantes.js";
 import { next } from "./next_prev.js";
 
+const $PARENT = $CIRCLE.parentElement;
+const $GRANDFATHER = $PARENT.parentElement;
 export function progressive() {
-  const $PARENT = $CIRCLE.parentElement;
   let { offsetHeight: x, offsetWidth: y } = $PARENT;
   $CIRCLE.style.top = `${x / 2 - $CIRCLE.clientHeight / 2}px`;
 }
@@ -17,12 +18,22 @@ export function run() {
       ),
       secondsStatic = Math.floor((miliSecondStatic % (1000 * 60)) / 1000);
     $TEMPO.lastElementChild.textContent = `${minuteStatic}:${secondsStatic}`;
-  }, 500);
+    $AUDIO.currentTime = $AUDIO.duration;
+  }, 1000);
 
   let setRun = setInterval(() => {
+    let minuteStatic = Math.floor(
+      (($AUDIO.duration * 1000) % (1000 * 60 * 60)) / (1000 * 60)
+    );
     let miliSecondsRun = $AUDIO.currentTime * 1000,
       minuteRun = Math.floor((miliSecondsRun % (1000 * 60 * 60)) / (1000 * 60)),
       secondsRun = "0" + Math.floor((miliSecondsRun % (1000 * 60)) / 1000);
+    // console.log(Math.floor(($AUDIO.currentTime * 10) / 10));
+    // console.log(
+    //   Math.floor(
+    //     ($AUDIO.currentTime * 1000) / ($GRANDFATHER.clientWidth * minuteStatic)
+    //   )
+    // );
     $TEMPO.firstElementChild.textContent = `${minuteRun}:${secondsRun.slice(
       -2
     )}`;
@@ -32,5 +43,5 @@ export function run() {
       next();
       return false;
     }
-  }, 500);
+  }, 1000);
 }
