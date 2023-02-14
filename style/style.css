@@ -123,17 +123,6 @@ body {
   top: 2rem;
   cursor: pointer;
 }
-.container-reproductor__effect {
-  position: absolute;
-  transform: rotate(180deg);
-  width: 100%;
-  background-color: #e4d9ff;
-  bottom: 0;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-}
 .container-reproductor__controls {
   width: 100%;
   display: flex;
@@ -165,6 +154,9 @@ body {
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
+}
+.container-reproductor__music:hover * {
+  opacity: 1;
 }
 .container-reproductor__temporizador {
   width: 80%;
@@ -202,11 +194,6 @@ body {
   -moz-border-radius: inherit;
   -ms-border-radius: inherit;
   -o-border-radius: inherit;
-  transition: width 0.5s linear;
-  -webkit-transition: width 0.5s linear;
-  -moz-transition: width 0.5s linear;
-  -ms-transition: width 0.5s linear;
-  -o-transition: width 0.5s linear;
 }
 .container-reproductor__circle {
   position: absolute;
@@ -216,11 +203,17 @@ body {
   width: 1.2rem;
   z-index: 2;
   background-color: #e4d9ff;
+  opacity: 0;
   border-radius: 100%;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
+  transition: opacity 0.5s linear;
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  -ms-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
 }
 .container-reproductor__title {
   font-size: 1.5rem;
@@ -254,6 +247,9 @@ body {
   }
   .container-reproductor__play-list {
     display: block;
+  }
+  .container-reproductor__circle {
+    opacity: 1;
   }
 }
 @media screen and (max-width: 320px) {
